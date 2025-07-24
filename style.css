@@ -1,0 +1,207 @@
+:root {
+  --color-fondo: #121212;
+  --color-secundario: #1e1e1e;
+  --color-boton: #bb86fc;
+  --color-hover: #985eff;
+  --color-texto: #e0e0e0;
+  --color-input-bg: #2c2c2c;
+  --color-placeholder: #777;
+  --color-label: #bbb;
+  --color-shadow: rgba(0, 0, 0, 0.7);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-fondo), var(--color-secundario));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: var(--color-texto);
+}
+
+.container {
+  display: flex;
+  background-color: var(--color-secundario);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px var(--color-shadow);
+  max-width: 900px;
+  width: 100%;
+  overflow: hidden;
+  animation: fadeSlide 1.2s ease forwards;
+}
+
+/* LOGIN */
+.login-container {
+  flex: 1;
+  padding: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo-container svg {
+  stroke: var(--color-boton);
+  width: 60px;
+  height: 60px;
+}
+
+.logo-container:hover {
+  transform: rotate(10deg) scale(1.1);
+  stroke: var(--color-hover);
+}
+
+.login-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  color: var(--color-texto);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-label);
+  display: block;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #444;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: var(--color-input-bg);
+  color: var(--color-texto);
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.form-group input:focus {
+  border-color: var(--color-boton);
+  outline: none;
+  box-shadow: 0 0 8px var(--color-boton);
+  transform: scale(1.01);
+}
+
+.login-btn {
+  background-color: var(--color-boton);
+  color: #121212;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(187, 134, 252, 0.5);
+}
+
+.login-btn:hover {
+  background-color: var(--color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(152, 94, 255, 0.7);
+}
+
+.footer-text {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #999;
+  text-align: center;
+}
+
+/* TEXTO DE BIENVENIDA */
+.welcome-text {
+  flex: 1;
+  padding: clamp(2rem, 5vw, 3rem);
+  background: linear-gradient(135deg, #3a3a7e, #a18cd1);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 3px solid var(--color-boton);
+}
+
+.welcome-text h1 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.welcome-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.btn-learn-more {
+  background-color: var(--color-boton);
+  color: #121212;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  width: fit-content;
+  transition: background-color 0.3s ease;
+  align-self: start;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(187, 134, 252, 0.6);
+}
+
+.btn-learn-more:hover {
+  background-color: var(--color-hover);
+  box-shadow: 0 8px 20px rgba(152, 94, 255, 0.8);
+}
+
+/* Animaciones */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+/* ... (el resto del CSS permanece igual) ... */
+
+/* RESPONSIVE: Oculta texto en móviles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    max-width: 400px;
+  }
+  .welcome-text {
+    display: none; /* Aquí se oculta el texto en móviles */
+  }
+}
+
+
