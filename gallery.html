@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        .card
+        {
+            border:none;
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        .card-img-top{
+            height: 200px;
+            width: 100%;
+            object-fit: contain;
+            filter: blur(8px);
+            transition: filter 0.3s ease-in-out;
+            background-color: #f0f0f0;
+        }
+
+        .clean-img{
+            filter:blur(0);
+        }
+
+        .card_footer{
+            background-color: transparent;
+            border-top: none;
+            padding: 10px 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <!--card imagen 1-->
+            <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <img src="photos/podo_1.jpg" class="card-img-top blur-img" alt="Foto 1">
+                <div class="card-footer">
+                    <button class="btn btn-primary" onclick="toggleBlur(this)"> Ver fotos</button>
+                </div>
+            </div>
+        </div>
+          <!--card imagen 2-->
+          <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <img src="photos/podo_2.jpg" class="card-img-top blur-img" alt="Foto 1">
+                <div class="card-footer">
+                    <button class="btn btn-primary" onclick="toggleBlur(this)"> Ver fotos</button>
+                </div>
+            </div>
+        </div>
+          <!--card imagen 3-->
+          <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <img src="photos/podo_3.jpg" class="card-img-top blur-img" alt="Foto 1">
+                <div class="card-footer">
+                    <button class="btn btn-primary" onclick="toggleBlur(this)"> Ver fotos</button>
+                </div>
+            </div>
+        </div>
+          <!--card imagen 4-->
+          <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <img src="photos/podo_4.jpg" class="card-img-top blur-img" alt="Foto 1">
+                <div class="card-footer">
+                    <button class="btn btn-primary" onclick="toggleBlur(this)"> Ver fotos</button>
+                </div>
+            </div>
+        </div>
+
+
+       </div>  
+    </div>  
+<script>
+    function toggleBlur(button){
+        const img = button.closest('.card').querySelector('img');
+        const isBlurred = img.classList.contains('blur-img');
+
+        if(isBlurred){
+            img.classList.remove('blur-img');
+            img.classList.add('clean-img');
+            button.textContent = 'Ocultar Foto'
+        }else{
+            img.classList.remove('clean-img');
+            img.classList.add('blur-img');
+            button.textContent = 'Ver Foto' 
+        }
+    }
+</script>
+
+</body>
+</html>
